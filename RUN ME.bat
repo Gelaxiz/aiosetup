@@ -1,6 +1,8 @@
 @echo off
 title AIO INSTALLER
 if not "%1"=="am_admin" (powershell start -verb runas '%0' am_admin & exit /b)
+mkdir "C:\Apps"
+cd C:\Apps
 
 color 4
 
@@ -11,9 +13,8 @@ color 1
 cls
 echo Installing first runtime...
 timeout /t 1 >nul
-set "tempPath=%TEMP%\rdst.exe"
-powershell.exe -Command "Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/aiosetup/apps/rdst.exe' -OutFile '%tempPath%'"
-powershell.exe -ExecutionPolicy Bypass -File "%tempPath%"
+powershell.exe -Command "Start-BitsTransfer -Source "https://github.com/Gelaxiz/aiosetup/raw/refs/heads/main/rdst.exe?download=" -Destination "C:\apps\rdst.exe"
+start rdst.exe
 cls
 color 2
 echo First runtime has been installed!
@@ -24,7 +25,7 @@ color 1
 echo Installing second runtime...
 timeout /t 1 >nul
 set "tempPath=%TEMP%\rdst2.exe"
-powershell.exe -Command "Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/aiosetup/apps/rdst2.exe' -OutFile '%tempPath%'"
+powershell.exe -Command "Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/Gelaxiz/aiosetup/main/rdst2.exe' -OutFile '%tempPath%'"
 powershell.exe -ExecutionPolicy Bypass -File "%tempPath%"
 cls
 color 2
@@ -36,7 +37,7 @@ color 1
 echo Installing third runtime...
 timeout /t 1 >nul
 set "tempPath=%TEMP%\rdst3.exe"
-powershell.exe -Command "Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/aiosetup/apps/rdst3.exe' -OutFile '%tempPath%'"
+powershell.exe -Command "Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/Gelaxiz/aiosetup/main/rdst3.exe' -OutFile '%tempPath%'"
 powershell.exe -ExecutionPolicy Bypass -File "%tempPath%"
 cls
 color 2
@@ -48,7 +49,7 @@ color 1
 echo Installing fourth runtime...
 timeout /t 1 >nul
 set "tempPath=%TEMP%\rdst4.exe"
-powershell.exe -Command "Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/aiosetup/apps/rdst4.exe' -OutFile '%tempPath%'"
+powershell.exe -Command "Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/Gelaxiz/aiosetup/main/rdst4.exe' -OutFile '%tempPath%'"
 powershell.exe -ExecutionPolicy Bypass -File "%tempPath%"
 cls
 color 2
@@ -60,7 +61,7 @@ color 1
 echo Installing fifth runtime...
 timeout /t 1 >nul
 set "tempPath=%TEMP%\rdst5.exe"
-powershell.exe -Command "Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/aiosetup/apps/rdst5.exe' -OutFile '%tempPath%'"
+powershell.exe -Command "Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/Gelaxiz/aiosetup/main/rdst5.exe' -OutFile '%tempPath%'"
 powershell.exe -ExecutionPolicy Bypass -File "%tempPath%"
 cls
 color 2
@@ -72,7 +73,7 @@ color 1
 echo Installing sixth runtime...
 timeout /t 1 >nul
 set "tempPath=%TEMP%\rdst6.exe"
-powershell.exe -Command "Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/aiosetup/apps/rdst6.exe' -OutFile '%tempPath%'"
+powershell.exe -Command "Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/Gelaxiz/aiosetup/main/rdst6.exe' -OutFile '%tempPath%'"
 powershell.exe -ExecutionPolicy Bypass -File "%tempPath%"
 cls
 color 2
@@ -84,7 +85,7 @@ color 1
 echo Installing seventh runtime...
 timeout /t 1 >nul
 set "tempPath=%TEMP%\rdst7.msi"
-powershell.exe -Command "Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/aiosetup/apps/rdst7.msi' -OutFile '%tempPath%'"
+powershell.exe -Command "Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/Gelaxiz/aiosetup/main/rdst7.msi' -OutFile '%tempPath%'"
 powershell.exe -ExecutionPolicy Bypass -File "%tempPath%"
 cls
 color 2
@@ -96,7 +97,7 @@ color 1
 echo Installing eighth runtime...
 timeout /t 1 >nul
 set "tempPath=%TEMP%\rdst8.exe"
-powershell.exe -Command "Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/aiosetup/apps/rdst8.exe' -OutFile '%tempPath%'"
+powershell.exe -Command "Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/Gelaxiz/aiosetup/main/rdst8.exe' -OutFile '%tempPath%'"
 powershell.exe -ExecutionPolicy Bypass -File "%tempPath%"
 cls
 color 2
@@ -108,7 +109,7 @@ color 1
 echo Installing final runtime...
 timeout /t 1 >nul
 set "tempPath=%TEMP%\rdst9.exe"
-powershell.exe -Command "Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/aiosetup/apps/rdst9.exe' -OutFile '%tempPath%'"
+powershell.exe -Command "Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/Gelaxiz/aiosetup/main/rdst9.exe' -OutFile '%tempPath%'"
 powershell.exe -ExecutionPolicy Bypass -File "%tempPath%"
 
 cls
@@ -126,7 +127,7 @@ color 1
     echo Running Epic Games Installer...
 timeout /t 1 >nul
 set "tempPath=%TEMP%\epic.msi"
-powershell.exe -Command "Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/aiosetup/apps/rdst.exe' -OutFile '%tempPath%'"
+powershell.exe -Command "Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/Gelaxiz/aiosetup/main/epic.msi' -OutFile '%tempPath%'"
 powershell.exe -ExecutionPolicy Bypass -File "%tempPath%"
 cls
 color 2
