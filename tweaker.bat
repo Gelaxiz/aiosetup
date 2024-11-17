@@ -1,6 +1,12 @@
+::Hello fellow people coming from tt now please dont judge me if this code is shit bru THIS GETS THE WORK DONE BRU
+
 @shift /0
 @echo off
 Set Version=0.95
+echo this script may disable uac (User Account Control) so it wont interfere with the tweaking processes so please remember to enable uac afterwards
+echo continue at your own risk..
+pause
+cls
 
 ::Enable RP
 Reg.exe delete "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsNT\CurrentVersion\SystemRestore" /v "RPSessionInterval" /f  >nul 2>&1
