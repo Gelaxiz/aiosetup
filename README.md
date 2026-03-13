@@ -2,6 +2,8 @@
 
 run in powershell:
 iwr gelaxiz.xyz/aio.ps1 | iex
+
+
 downloads from their original sources so no viruses else if activator and tweaker are false positives
 
 
